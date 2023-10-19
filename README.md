@@ -34,7 +34,7 @@ Site: "https://aladhan.com/islamic-calendar-api#GetGToHCalendar"
 
 API: http://api.aladhan.com/v1/gToHCalendar/:month/:year
 
-this API takes two parameters as an input month and year and returns the Hijri Calendar for this month
+this API takes two parameters as an input (month and year) and returns the Hijri Calendar for this month
 using Java transformation to create nested loop-to-loop for years and months to request data for different months
 
 ![image](https://github.com/mostafa-khairy/SCD-all-Type-and-API/assets/87584678/3d83aee0-b448-4d95-b6a1-7bedf9daba42)
