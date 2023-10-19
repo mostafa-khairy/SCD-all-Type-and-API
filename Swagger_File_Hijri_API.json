@@ -1,0 +1,191 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "api.aladhan.com",
+  "basePath" : "/v1/gToHCalendar",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "{month}/{year}" : {
+      "get" : {
+        "tags" : [ "test3" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "test3",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "month",
+          "in" : "path",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "year",
+          "in" : "path",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/test3"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "test3##data##hijri##weekday" : {
+      "properties" : {
+        "en" : {
+          "type" : "string"
+        },
+        "ar" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##hijri##month" : {
+      "properties" : {
+        "number" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "en" : {
+          "type" : "string"
+        },
+        "ar" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##hijri##designation" : {
+      "properties" : {
+        "abbreviated" : {
+          "type" : "string"
+        },
+        "expanded" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##hijri" : {
+      "properties" : {
+        "date" : {
+          "type" : "string"
+        },
+        "format" : {
+          "type" : "string"
+        },
+        "day" : {
+          "type" : "string"
+        },
+        "weekday" : {
+          "$ref" : "#/definitions/test3##data##hijri##weekday"
+        },
+        "month" : {
+          "$ref" : "#/definitions/test3##data##hijri##month"
+        },
+        "year" : {
+          "type" : "string"
+        },
+        "designation" : {
+          "$ref" : "#/definitions/test3##data##hijri##designation"
+        },
+        "holidays" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##gregorian##weekday" : {
+      "properties" : {
+        "en" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##gregorian##month" : {
+      "properties" : {
+        "number" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "en" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##gregorian##designation" : {
+      "properties" : {
+        "abbreviated" : {
+          "type" : "string"
+        },
+        "expanded" : {
+          "type" : "string"
+        }
+      }
+    },
+    "test3##data##gregorian" : {
+      "properties" : {
+        "date" : {
+          "type" : "string"
+        },
+        "format" : {
+          "type" : "string"
+        },
+        "day" : {
+          "type" : "string"
+        },
+        "weekday" : {
+          "$ref" : "#/definitions/test3##data##gregorian##weekday"
+        },
+        "month" : {
+          "$ref" : "#/definitions/test3##data##gregorian##month"
+        },
+        "year" : {
+          "type" : "string"
+        },
+        "designation" : {
+          "$ref" : "#/definitions/test3##data##gregorian##designation"
+        }
+      }
+    },
+    "test3##data" : {
+      "properties" : {
+        "hijri" : {
+          "$ref" : "#/definitions/test3##data##hijri"
+        },
+        "gregorian" : {
+          "$ref" : "#/definitions/test3##data##gregorian"
+        }
+      }
+    },
+    "test3" : {
+      "properties" : {
+        "code" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/test3##data"
+          }
+        }
+      }
+    }
+  }
+}
